@@ -19,6 +19,20 @@ info:
   name: ${spring.application.name}
   address: ${spring.cloud.client.ip-address}
   port: ${server.port}
+logging:
+  level:
+    root: info
+    cn.x.springcloud.user.feign: debug #打印feign日志
+feign:
+  #feign请求响应压缩
+  compression:
+    request:
+      enabled: true
+    response:
+      enabled: true
+  #feign的hystrix支持
+  hystrix:
+    enabled: true
 #显示监控健康状态信息
 management:
   endpoint:

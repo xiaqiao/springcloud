@@ -4,7 +4,7 @@ spring:
   application:
     name: springcloud-order
   jackson:
-    date-format: yyyy-MM-dd HH:mm:ss
+    date-format: yyyy-MM-dd
     time-zone: GMT+8
 eureka:
   client:
@@ -23,14 +23,7 @@ info:
 logging:
   level:
     root: info
-    cn:
-      x:
-        springcloud:
-          order:
-            feign: debug #打印feign日志
-  pattern:
-    console: "%d - %msg%n"
-
+    cn.x.springcloud.order.feign: debug #打印feign日志
 feign:
   #feign请求响应压缩
   compression:
@@ -40,7 +33,7 @@ feign:
       enabled: true
   #feign的hystrix支持
   hystrix:
-    enabled: false
+    enabled: true
 #显示监控健康状态信息
 management:
   endpoint:

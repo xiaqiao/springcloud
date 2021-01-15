@@ -23,14 +23,7 @@ info:
 logging:
   level:
     root: info
-    cn:
-      x:
-        springcloud:
-          order:
-            feign: debug #打印feign日志
-  pattern:
-    console: "%d - %msg%n"
-
+    cn.x.springcloud.order.feign: debug #打印feign日志
 feign:
   #feign请求响应压缩
   compression:
