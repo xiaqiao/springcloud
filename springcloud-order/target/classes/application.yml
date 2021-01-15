@@ -4,7 +4,7 @@ spring:
   application:
     name: springcloud-order
   jackson:
-    date-format: yyyy-MM-dd
+    date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
 eureka:
   client:
