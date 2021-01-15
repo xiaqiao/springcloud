@@ -1,0 +1,25 @@
+server:
+  port: 8762
+spring:
+  application:
+    name: springcloud-eureka
+  security:
+    user:
+      name: x123
+      password: x123
+eureka:
+  server:
+    #renews和renews threshold的比值 默认0.85
+    renewal-percent-threshold: 0.45
+  client:
+    serviceUrl:
+      defaultZone: http://x123:x123@127.0.0.1:8761/eureka/
+      healthcheck:
+        enabled: true
+  instance:
+    prefer-ip-address: true
+    instanceId: ${spring.cloud.client.ip-address}:${server.port}[${spring.application.name}]
+info:
+  name: ${spring.application.name}
+  address: ${spring.cloud.client.ip-address}
+  port: ${server.port}

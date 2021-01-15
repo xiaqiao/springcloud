@@ -1,0 +1,48 @@
+server:
+  port: 8891
+spring:
+  application:
+    name: springcloud-order
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://x123:x123@127.0.0.1:8761/eureka/,http://x123:x123@127.0.0.1:8762/eureka/
+    healthcheck:
+      enabled: true
+  instance:
+    prefer-ip-address: true
+    instanceId: ${spring.cloud.client.ip-address}:${server.port}[${spring.application.name}]
+#自定义展示actuator info信息
+info:
+  name: ${spring.application.name}
+  address: ${spring.cloud.client.ip-address}
+  port: ${server.port}
+logging:
+  level:
+    root: info
+    cn:
+      x:
+        springcloud:
+          order:
+            feign: debug #打印feign日志
+  pattern:
+    console: "%d - %msg%n"
+
+feign:
+  #feign请求响应压缩
+  compression:
+    request:
+      enabled: true
+    response:
+      enabled: true
+  #feign的hystrix支持
+  hystrix:
+    enabled: true
+#显示监控健康状态信息
+management:
+  endpoint:
+    health:
+      show-details: always
