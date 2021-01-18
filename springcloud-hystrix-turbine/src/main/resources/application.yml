@@ -1,0 +1,18 @@
+server:
+  port: 9002
+spring:
+  application:
+    name: springcloud-hystrix-turbine
+eureka:
+  client:
+    service-url:
+      defaultZone: http://x123:x123@127.0.0.1:8761/eureka/,http://x123:x123@127.0.0.1:8762/eureka/
+  instance:
+    prefer-ip-address: true
+    instanceId: ${spring.cloud.client.ip-address}:${server.port}[${spring.application.name}]
+turbine:
+  aggregator:
+    cluster-config: default
+  app-config: springcloud-user,springcloud-order
+  instanceUrlSuffix: /hystrix.stream
+  cluster-name-expression: "'default'"

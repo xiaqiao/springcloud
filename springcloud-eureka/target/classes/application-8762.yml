@@ -12,7 +12,7 @@ eureka:
     #renews和renews threshold的比值 默认0.85
     renewal-percent-threshold: 0.45
   client:
-    serviceUrl:
+    service-url:
       defaultZone: http://x123:x123@127.0.0.1:8761/eureka/
       healthcheck:
         enabled: true
