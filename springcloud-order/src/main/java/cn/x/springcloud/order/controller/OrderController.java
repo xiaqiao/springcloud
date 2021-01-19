@@ -24,8 +24,16 @@ public class OrderController {
     @Autowired
     private UserFeignClient userFeignClient;
 
+    @GetMapping("/{id}")
+    public ResponseResult userOrder(@PathVariable Long id) {
+        OrderVO orderVO = new OrderVO();
+        orderVO.setId(id);
+        orderVO.setOrderTime(new Date());
+        orderVO.setUserName(userFeignClient.user(1).getData().get("name").toString());
+        return ResponseResult.success(orderVO);
+    }
+
     @GetMapping("/user/{id}")
-//    @HystrixCommand(fallbackMethod = "orderFallback")
     public ResponseResult userOrder(@PathVariable Integer id) {
         List<OrderVO> list = new ArrayList<>();
 
@@ -38,9 +46,5 @@ public class OrderController {
         }
         return ResponseResult.success(list);
     }
-
-//    public ResponseResult orderFallback() {
-//        return new ResponseResult();
-//    }
 
 }

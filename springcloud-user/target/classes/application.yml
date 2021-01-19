@@ -15,6 +15,7 @@ eureka:
   instance:
     prefer-ip-address: true
     instanceId: ${spring.cloud.client.ip-address}:${server.port}[${spring.application.name}]
+#自定义展示actuator info信息
 info:
   name: ${spring.application.name}
   address: ${spring.cloud.client.ip-address}

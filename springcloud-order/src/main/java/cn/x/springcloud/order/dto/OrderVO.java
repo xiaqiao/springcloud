@@ -12,4 +12,5 @@ import java.util.Date;
 public class OrderVO {
     private Long id;
     private Date orderTime;
+    private String userName;
 }

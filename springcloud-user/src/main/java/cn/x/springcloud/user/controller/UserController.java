@@ -25,7 +25,7 @@ public class UserController {
         UserVO userVO = new UserVO();
         userVO.setId(id);
         userVO.setName("name" + id);
-        userVO.setOrderList(orderFeignClient.orderByUser(id).getData());
+//        userVO.setOrderList(orderFeignClient.orderByUser(id).getData());
         return ResponseResult.success(userVO);
     }
 

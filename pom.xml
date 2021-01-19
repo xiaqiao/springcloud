@@ -34,6 +34,7 @@
         <module>springcloud-order</module>
         <module>springcloud-hystrix-dashboard</module>
         <module>springcloud-hystrix-turbine</module>
+        <module>springcloud-zuul</module>
     </modules>
 
     <dependencies>
