@@ -15,3 +15,12 @@ eureka:
   instance:
     prefer-ip-address: true
     instanceId: ${spring.cloud.client.ip-address}:${server.port}[${spring.application.name}]
+zuul:
+  routes:
+    user-service:
+      path: /user-service/**
+      serviceId: springcloud-user
+    order-service:
+      path: /order-service/**
+      serviceId: springcloud-order
+  sensitive-headers:
