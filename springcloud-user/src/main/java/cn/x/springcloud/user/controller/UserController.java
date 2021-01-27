@@ -4,6 +4,7 @@ import cn.x.springcloud.user.bean.ResponseResult;
 import cn.x.springcloud.user.dto.UserVO;
 import cn.x.springcloud.user.feign.OrderFeignClient;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,7 +25,7 @@ public class UserController {
     public ResponseResult user(@PathVariable Integer id) {
         UserVO userVO = new UserVO();
         userVO.setId(id);
-        userVO.setName("name" + id);
+        userVO.setName("x");
 //        userVO.setOrderList(orderFeignClient.orderByUser(id).getData());
         return ResponseResult.success(userVO);
     }

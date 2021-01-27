@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: springcloud-eureka
+  cloud:
+    config:
+      uri: http://localhost:9999
+      label: main

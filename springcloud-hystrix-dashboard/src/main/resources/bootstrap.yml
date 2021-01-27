@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: springcloud-hystrix-dashboard
+  cloud:
+    config:
+      uri: http://localhost:9999
+      label: main

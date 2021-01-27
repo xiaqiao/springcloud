@@ -1,8 +1,0 @@
-server:
-  port: 9001
-spring:
-  application:
-    name: springcloud-hystrix-dashboard
-hystrix:
-  dashboard:
-    proxy-stream-allow-list: "*"

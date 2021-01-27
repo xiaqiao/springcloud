@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: springcloud-user
+  cloud:
+    config:
+      uri: http://localhost:9999
+      label: main

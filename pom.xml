@@ -35,6 +35,7 @@
         <module>springcloud-hystrix-dashboard</module>
         <module>springcloud-hystrix-turbine</module>
         <module>springcloud-zuul</module>
+        <module>springcloud-config</module>
     </modules>
 
     <dependencies>
