@@ -3,6 +3,10 @@ server:
 spring:
   application:
     name: springcloud-config-server
+  security:
+    user:
+      name: x123
+      password: x123
   cloud:
     config:
       server:
@@ -10,3 +14,12 @@ spring:
           uri: https://github.com/xiaqiao/config-repo
           #github默认分支由master改为main
           default-label: main
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://x123:x123@127.0.0.1:8761/eureka/,http://x123:x123@127.0.0.1:8762/eureka/
+#    healthcheck:
+#      enabled: true
+#  instance:
+#    prefer-ip-address: true
+#    instanceId: ${spring.cloud.client.ip-address}:${server.port}[${spring.application.name}]

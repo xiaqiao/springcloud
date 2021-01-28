@@ -3,5 +3,7 @@ spring:
     name: springcloud-eureka
   cloud:
     config:
-      uri: http://localhost:9999
+      uri: http://127.0.0.1:9999
       label: main
+      username: x123
+      password: x123
